@@ -7,7 +7,7 @@ draft: true
 ## Preface
 部署网站这事就是个ops的活。虽然我工作的部门也是做ops的，但是我其实是不太喜欢做ops。无论是编程还是以前做实验，做ops经常会手忙脚乱。那怕按照给的文章或者guide去做，我依然会遇到一些奇奇怪怪的hurdles。这篇文章就是记录下我第一次上线这个网站时踩过的坑。
 
-## 坑
+## 那些年踩过的坑
 人类的本质是复读机。万事开头，先搜攻略。于是搜到了这2个，觉得比较有用。未来如果忘了hugo部署也可以直接从这2个攻略复习。
 * https://zhuanlan.zhihu.com/p/57361697
 * https://zhuanlan.zhihu.com/p/105021100?utm_source=wechat_timeline&utm_medium=social&utm_oi=545850779622232064&utm_content=first
@@ -42,20 +42,15 @@ draft: true
 
 如果我们要使用github page去部署，根据github要求，这个网站的repo需要命名为 ```username.github.io```。那么问题来了：这个repo里放的是整个workspace还是只是public这个文件夹呢？
 
-其实都可以。不同攻略里处理方式都不一样。有人把网站文件生成到/docs路径下。然后把整个workspace推上去，然后在github page的设置里指定/docs。这样同样能部署。但是有人提醒这样不安全。因为你的workspace别人也能看到。
-
-更好的方式是建2个repo。一个是workspace的repo。另一个是public文件的repo并且github.io结尾的repo是指向的后者。
+其实都可以。不同攻略里处理方式都不一样。有人把网站文件生成到/docs路径下。然后把整个workspace推上去，然后在github page的设置里指定/docs。这样同样能部署。但是有人提醒这样不安全。因为你的workspace别人也能看到。更好的方式是建2个repo。一个是workspace的repo。另一个是public文件的repo并且github.io结尾的repo是指向的后者。
 
 
-上面我给的第一个link里就是这么处理的。然后还有个事要做，就是在workspace的repo 里把public folder设置为submodule：
-```git submodule add -b main https://url-to-github.io.git public```
-
+上面我给的第一个link里就是这么处理的。然后还有个事要做，就是在workspace的repo 里把public folder设置为submodule：  
+```git submodule add -b main https://url-to-github.io.git public```   
 这么做据说是可以
-> 当你 push worksapce库时，工作流自动将worksapce库的编译输出(/docs目录中的变更信息)合并io仓库，这样你就能隔离两个工作环境，还能随时存储你的工作进度
+> “当你 push worksapce库时，工作流自动将worksapce库的编译输出(/docs目录中的变更信息)合并io仓库，这样你就能隔离两个工作环境，还能随时存储你的工作进度”
 
-我上面那句其实没完全懂，但是如果不设置submodule, 推送workspace会提示warning nested git repo，要求你设置成submodule。 所以最佳实践还是做一下吧。不要跳！
-
-看完这些，如果一些细节还是不太懂做了啥，可以看下面这个youtube demo:
+我上面那句其实没完全懂，但是如果不设置submodule, 推送workspace会提示warning nested git repo，要求你设置成submodule。 所以最佳实践还是做一下吧。不要跳！看完这些，如果一些细节还是不太懂做了啥，可以看下面这个youtube demo:
 [Creating a Blog with Hugo and Github in 10 minutes](https://www.youtube.com/watch?v=LIFvgrRxdt4)
 
 ### 发布后阶段
