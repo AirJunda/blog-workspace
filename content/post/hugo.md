@@ -1,7 +1,7 @@
 ---
 title: "那些Hugo踩过的坑"
 date: 2021-11-04T22:39:37+08:00
-draft: true
+draft: false
 ---
 
 ## Preface
@@ -9,8 +9,8 @@ draft: true
 
 ## 那些年踩过的坑
 人类的本质是复读机。万事开头，先搜攻略。于是搜到了这2个，觉得比较有用。未来如果忘了hugo部署也可以直接从这2个攻略复习。
-* https://zhuanlan.zhihu.com/p/57361697
-* https://zhuanlan.zhihu.com/p/105021100?utm_source=wechat_timeline&utm_medium=social&utm_oi=545850779622232064&utm_content=first
+* [如何利用 GitHub Pages 和 Hugo 轻松搭建个人博客？](https://zhuanlan.zhihu.com/p/57361697)
+* [使用 Hugo + Github 搭建个人博客](https://zhuanlan.zhihu.com/p/105021100?utm_source=wechat_timeline&utm_medium=social&utm_oi=545850779622232064&utm_content=first)
 
 下面开始说按照上面的步骤时遇到的坑和注意事项。
 ### 发布前的阶段
