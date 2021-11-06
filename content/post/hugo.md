@@ -17,7 +17,7 @@ draft: true
 安装好hugo后，主要做的事情是导入自己喜欢的theme，和用MD写自己的文章，然后在本地跑起来，预览下网站效果。
 
 * 导入theme
-  - 导入theme时，不同攻略中有2种方式：使用git submodule命令或者直接git clone。 建议使用 ```git submodule add``` 去导入。例子如下：
+  - 导入theme时，不同攻略中有2种方式：使用git submodule命令或者直接git clone。 建议使用 ```git submodule add``` 去导入。原因是如果使用action的CICD, 现有的yaml文件里需要指定theme文件是通过submodule去拉取。如果一开始没有添加theme路径为submodule, 在workflow的build阶段会报错找不到submodule theme/xxx。使用submodule的例子如下：
   > ```git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt```
 * 创建新文章
   -  命令是这样写的 ```hugo new posts/demo.md ``` 但是很多theme默认文章是在 post/ 目录下。因此如果发现自己写的文章在网站启动后找不到，建议把上面命令里的posts改成post试一试。这个坑我搞了半个晚上才发现 XD
