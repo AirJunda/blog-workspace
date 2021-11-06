@@ -2,3 +2,6 @@
 	path = public
 	url = https://github.com/AirJunda/AirJunda.github.io.git
 	branch = main
+[submodule "themes/blackburn"]
+	path = themes/blackburn
+	url = https://github.com/yoshiharuyamashita/blackburn.git
