@@ -1,7 +1,7 @@
 name: Deploy GitHub Page
 
 on:
-# 在推或拉请求事件上触发工作流
+# 在push或pull请求事件上触发工作流
   push:
     branches:
       - main
@@ -22,7 +22,7 @@ jobs:
       uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: '0.80.0'
-        # extended: true
+        # extended: true  # use extened hugo if set true
 
     - name: Build
       run: hugo -D
@@ -31,6 +31,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3  #一个自动发布github pages的action
       with:
         external_repository: AirJunda/AirJunda.github.io
-        personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}  # or github_token?
+        personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}  # or use github_token: ?
         publish_dir: ./public # 注意这里指的是要发布哪个文件夹的内容，而不是指发布到目的仓库的什么位置，因为hugo默认生成静态网页到public文件夹，所以这里发布public文件夹里的内容
         publish_branch: main  # 发布到哪个branch
