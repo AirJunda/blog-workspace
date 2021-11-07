@@ -65,7 +65,7 @@ jobs:
 ## Workflow Status
 想知道自己的workflow有没有成功运行？想知道网站有成功重新部署？这个可以在hugo blog repo里的action tag下看到。
 
-![action_status](/img/action_status.JPG)
+![action_status](/image/action_status.JPG)
 
 到这里，CICD的攻略就结束了。虽然是跑起来了，但是感觉CICD还是很多不清楚的地方。比如其实挺想知道如果是像公司那样用jenkins,cicd有应该怎么写。这些都留给以后了
 
