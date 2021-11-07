@@ -3,6 +3,7 @@ title: "CICD Action"
 date: 2021-11-07T22:39:12+08:00
 draft: false
 tags: ["Hugo","Tech"]
+topics: ["TechBlog"]
 ---
 
 ## 使用GitHub Action 构建本博客的CICD发布流程
