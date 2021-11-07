@@ -66,4 +66,5 @@ draft: false
 
 ## Reading List
 * https://cloud.tencent.com/developer/article/1769218 (架构图不错)
+* https://zz2summer.github.io/github-pages-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ (有包含使用google analytics和插入图片水印的介绍)
 
