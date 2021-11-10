@@ -1,5 +1,5 @@
 ---
-title: "Go_path"
+title: "GoPATH和Go的包管理"
 date: 2021-11-11T00:53:20+08:00
 draft: true
 ---
@@ -11,7 +11,8 @@ draft: true
 * [Go语言GOPATH是什么](https://www.cnblogs.com/ailiailan/p/13454139.html#:~:text=GOPATH%20%E6%98%AFGo%20%E8%AF%AD%E8%A8%80%E4%B8%AD,%E5%B0%B1%E6%98%AF%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%82)
 
 * [Create projects independent of $GOPATH using Go Modules](https://medium.com/mindorks/create-projects-independent-of-gopath-using-go-modules-802260cdfb51)
-
+* [让你的Golang项目在IDE里跑起来](https://cloud.tencent.com/developer/article/1596713)
+* [Go语言基本环境变量与依赖管理](https://cloud.tencent.com/developer/article/1650021?from=article.detail.1596713)
 #### 我的理解
 
 TODO
