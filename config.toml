@@ -46,13 +46,13 @@ theme = "blackburn"
     url = "/post/"
   [[menu.main]]
     name = "Tags"
-    pre = "<i class='fa fa-list fa-fw'></i>"
+    pre = "<i class='fa fa-tags fa-fw'></i>"
     weight = 3
     identifier = "tags"
     url = "/tags/"
   [[menu.main]]
     name = "Topics"
-    pre = "<i class='fa fa-list fa-fw'></i>"
+    pre = "<i class='fa fa-book fa-fw'></i>"
     weight = 4
     identifier = "topics"
     url = "/topics/"
@@ -73,14 +73,14 @@ theme = "blackburn"
   # by entering your username or ID.
 
   # SNS microblogging
-  twitter = "*"
-  facebook = "*"
-  weibo = "*"
+  # twitter = "*"
+  # facebook = "*"
+  # weibo = "*"
 
 
   # SNS photo/video sharing
   instagram = "*"
-  youtube = "*"
+  # youtube = "*"
 
  
 
@@ -92,12 +92,12 @@ theme = "blackburn"
 
   # Techie
   github = "airjunda"
-  gitlab = "*"
+  # gitlab = "*"
  
  
 
   # Gaming
-  steam = "*"
+  # steam = "*"
 
 
   # Music
