@@ -35,3 +35,6 @@ redis-server --service-stop
 我用的是Another Redis Desktop Manager; 免费，Win/Mac都可以用
 
 设置connection的话，默认的端口一般是6379
+
+## Redis分别式集群
+看这篇了解下。以后再尝试;[redis的安装和分布式配置简洁教程](https://zhuanlan.zhihu.com/p/25239636)
