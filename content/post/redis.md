@@ -11,7 +11,7 @@ topics: ["TechBlog"]
 这篇记录下win10上安装redis的一些要点
 
 ## 他山之石
-* [win10下安装redis 服务](https://www.cnblogs.com/huchong/p/9650158.html)
+* [win10下安装redis服务](https://www.cnblogs.com/huchong/p/9650158.html)
 
 
 ## 要点
@@ -37,4 +37,5 @@ redis-server --service-stop
 设置connection的话，默认的端口一般是6379
 
 ## Redis分别式集群
-看这篇了解下。以后再尝试;[redis的安装和分布式配置简洁教程](https://zhuanlan.zhihu.com/p/25239636)
+看这篇了解下。以后再尝试：
+[redis的安装和分布式配置简洁教程](https://zhuanlan.zhihu.com/p/25239636)
