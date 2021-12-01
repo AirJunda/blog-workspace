@@ -52,8 +52,8 @@ Set-Theme Agnoster/paradox/你想要的theme name
 修改了windows terminal的样式会导致IDE中的集成terminal出现色彩不协调或者乱码。需要单独设置。
 
 ## VS Code中Terminal乱码解决
-
-TODO
+需要在File/Preference/Settings中设置Terminal Font. 在settings的搜索box中输入Terminal Font就能找到填写字体的框框。我Win Terminal用的是CaskaydiaCove NF，所以我在VS Code中也设置的是这个字体。但是也可以使用其他的。设置教程可以参考这篇：
+[解决 VScode 终端 Zsh 主题乱码的问题](https://dreamhomes.top/posts/202006222027/)
 
 ## Goland中Terminal美化 
 
