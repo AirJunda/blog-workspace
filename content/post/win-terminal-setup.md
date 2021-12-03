@@ -1,14 +1,14 @@
 ---
 title: "Win Terminal Setup"
 date: 2021-11-29T21:10:13+08:00
-draft: true
+draft: false
 tags: ["Terminal","Tech","Windows","Setup"]
 topics: ["TechBlog"]
 ---
 
 ## Win10 Terminal 美化工程
 
-这篇记录下win10上美化Terminal的步骤
+这篇记录下win10上美化Terminal的步骤。
 
 ## 他山之石
 * [攻略](https://moedev.net/nice-winterminal/)
@@ -57,7 +57,12 @@ Set-Theme Agnoster/paradox/你想要的theme name
 
 ## Goland中Terminal美化 
 
-TODO
+Goland中也会因为terminal字体美化而在内置terminal中出现不同的颜色。目前似乎没发现兼容方案。
+
+
+
+## Extra Reading
+[基于posh字体乱码问题修复](https://www.i4k.xyz/article/xuchaoxin1375/118269272)
 
 
 
