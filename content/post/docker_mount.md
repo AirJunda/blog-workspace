@@ -70,3 +70,6 @@ VOLUME ["/var/lib/mysql"]
 * docker rm -f $(docker container ps -aq)
 * docker system prune -f
 * docker volume prune -f
+
+## Reading
+https://dockertips.readthedocs.io/en/latest/docker-volume/data-volume.html
