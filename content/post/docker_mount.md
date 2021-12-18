@@ -34,8 +34,8 @@ inspect命令可以给出这个volume在host上的path, linux下cd 到那个path
  ``` shell
  docker container run --name volume-mysql -e  -v mysql-data:/var/lib/mysql mysql:5.7
  ```
-**注意**：需要dockfile里声明 
-```dockfile
+**注意**：需要dockfile里声明  
+```dockerfile
 VOLUME ["/var/lib/mysql"]
  ```
 
@@ -51,7 +51,7 @@ VOLUME ["/var/lib/mysql"]
 上课演示的命令如下：
 
  ``` shell
- docker container run --name mount-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d -v /vagrant/mount:/var/lib/mysql mysql:5.7
+ docker container run --name mount-mysql -e  -d -v /vagrant/mount:/var/lib/mysql mysql:5.7
  ```
 
 注意上面的 -v 的写法是 /vagrant/mount:/var/lib/mysql
