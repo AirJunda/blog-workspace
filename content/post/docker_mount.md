@@ -18,7 +18,9 @@ Docker主要提供了两种方式做数据的持久化
 
 ## Data Volume
 volume在host上创建。创建和管理是由docker负责的。每个容器持久化的数据存到各自的volume。使用volume方式时，需要在容器的dockfile里添加 下面这样的命令：     
-```VOLUME ["/filepath_in_container"]```     
+```dockerfile
+VOLUME ["/filepath_in_container"]
+```     
 容器启动后，会在host中生成一个volume。可以通过 ```docker volume ls```  查看到新创建的volume。常用命令：
 * docker volume ls
 * docker volume inspect xxxx (xxx is volume name)
@@ -32,7 +34,10 @@ inspect命令可以给出这个volume在host上的path, linux下cd 到那个path
  ``` shell
  docker container run --name volume-mysql -e  -v mysql-data:/var/lib/mysql mysql:5.7
  ```
-**注意**：需要dockfile里声明 ```VOLUME ["/var/lib/mysql"] ```
+**注意**：需要dockfile里声明 
+```dockfile
+VOLUME ["/var/lib/mysql"]
+ ```
 
 
 
