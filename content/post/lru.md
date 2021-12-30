@@ -1,10 +1,11 @@
 ---
 title: "LRU算法复习笔记"
-date: 2021-12-31T22:39:12+08:00
+date: 2021-12-30T22:39:12+08:00
 draft: false
 tags: ["Algo","Tech","Lintcode"]
 topics: ["TechBlog"]
 ---
+
 
 ## LRU算法
 这篇是记录下LRU算法写起来时候的一些注意事项。LRU算法在OS, DB中都有涉及。在Redis也有涉及。面试也是高频的一个考察。       
