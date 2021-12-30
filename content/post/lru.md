@@ -12,8 +12,9 @@ LRU 的全称是 Least Recently Used，也就是说我们认为最近使用过�
 
 ## 他山之石
 * [labuladong解析](https://leetcode-cn.com/problems/lru-cache/solution/lru-ce-lue-xiang-jie-he-shi-xian-by-labuladong/)
-* 
 
+
+&nbsp;
 
 ## 分析
 LeetCode的LRU需要下面2个这样的借口。要求：
@@ -33,6 +34,7 @@ def set(self, key, value):
 那么，什么数据结构同时符合上述条件呢？哈希表set/get快，但是数据无固定顺序；链表有顺序之分，set插入快，但是get慢。所以结合一下，形成一种新的数据结构：哈希链表。
 
 ![哈希链表](https://pic.leetcode-cn.com/b84cf65debb43b28bd212787ca63d34c9962696ed427f638763be71a3cb8f89d.jpg)
+
 哈希链表就是一个双向linkedlist + hashmap；hashmap的key是key, value是链表里的node。这样可以直接通过某个Key访问到node
 
 ## 实施
