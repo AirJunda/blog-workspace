@@ -72,6 +72,7 @@ docker network ls
 ### Bridge网络示意图
 ![docker bridge network](/image/two-container-network.PNG)
 
+
 * 图里veth1, veth2...可以理解成交换机上的网线插口
 
 ## 容器对外通信
