@@ -1,5 +1,5 @@
 ---
-title: "Comparator"
+title: "Python自定义Comparator"
 date: 2022-01-12T18:38:33+08:00
 draft: false
 tags: ["Algo","Tech","Lintcode","Python"]
