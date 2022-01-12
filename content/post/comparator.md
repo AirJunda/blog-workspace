@@ -14,9 +14,9 @@ topics: ["TechBlog"]
 
 ### comparator
 对于函数 comp(left, right)：
-    1. return a negative value (< 0) when the left item should be sorted before the right item
-    2. return a positive value (> 0) when the left item should be sorted after the right item
-    3. return 0 if left and right input is equal
+* return a negative value (< 0) when the left item should be sorted before the right item
+* return a positive value (> 0) when the left item should be sorted after the right item
+* return 0 if left and right input is equal
 
 ### 实战（184 最大数）
 给出一组非负整数，重新排列他们的顺序把他们组成一个最大的整数。
