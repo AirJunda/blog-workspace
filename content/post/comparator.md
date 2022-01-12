@@ -56,8 +56,7 @@ Python3
 nums = sorted(num,key=functools.cmp_to_key(mycmp), reverse=True)
 ```
 
-## 相关练习
-Lintcode182 [Delete Digits](https://www.lintcode.com/problem/182)
+
 
 
 
