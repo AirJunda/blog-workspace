@@ -1,7 +1,9 @@
 ---
 title: "Binary Search易错难点"
 date: 2022-01-25T18:10:21+08:00
-draft: true
+draft: false
+tags: ["Algo","Tech","Lintcode","Binary Search"]
+topics: ["TechBlog"]
 ---
 
 二分法本身不难。不过有几类类问题我还不是特别熟练。容易卡住/出错。这个文章就是记录下相关的题。方便以后复习。
