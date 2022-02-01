@@ -104,3 +104,9 @@ class Solution:
 * [52 · 下一个排列](https://www.lintcode.com/problem/52)
 
 
+
+## Related Questions
+下面这2题非DFS。但是也是和排列相关。可以了解下不用DFS但是又是排列组合的题目怎么做
+
+* [197 · 排列序号](https://www.lintcode.com/problem/197/)
+* [198 · 排列序号II](https://www.lintcode.com/problem/198/)
