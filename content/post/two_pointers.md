@@ -21,7 +21,7 @@ topics: ["TechBlog"]
 2. Two Sum 类（最多）
 3. Partition 类（较多）
 
-##### Reverse 类
+#### Reverse 类
 复习一下三步翻转法就好: [旋转数组](https://www.lintcode.com/problem/1334/description)  
 
 图解如下：      
@@ -33,7 +33,7 @@ reverse "<--" we can get "--><-----"
 reverse "<-----" we can get "-->----->"
 ```
 
-##### Two Sum 类
+#### Two Sum 类
 TwoSum原题：给一组整数arr和目标值，是否存在任意一对数字之和等于这个值
 原题很简单，但是如果输入有重复元素应该如何处理呢？那么就看这题：
 [Two Sum - Unique pairs](https://www.lintcode.com/problem/587)  
@@ -96,7 +96,7 @@ def threeSum(self, numbers):
 * [ 最接近的三数之和](https://www.lintcode.com/problem/59/)
  
 
-##### Partition 类
+#### Partition 类
 Partition类题目都会用到下面这个人质交换模板：
 ```python
 while i <= j:
@@ -120,7 +120,7 @@ while i <= j:
 * https://www.lintcode.com/problem/49/note
 * 
 
-###### Quicksort
+##### Quicksort
 虽然也用到了上面的模板，但是不是非左即右，而是采用了pivot里外不是人的划分，下面是quicksort的代码：
 ```python
 def sortIntegers(self, A):
@@ -161,7 +161,7 @@ def sortIntegers(self, A):
 * 最后采用的 A[left] < pivot， A[right] > pivot 这种里外不是人的：
 遇到等于pivot的元素，2个帮派都把他当对方的人，遇到就拿去交换。那么最后这些散落的，重复的pivot就会随机的在2个帮派之间分摊掉。避免形成 [], 从而避免跳不出递归。
 
-###### QuickSelect
+##### QuickSelect
 一个o(N)的find kth element的算法。用到了和quicksort一样的分区。思路就是通过快速排序算法的partition步骤，可以将小于pivot的值划分到pivot左边，大于pivot的值划分到pivot右边，所以可以直接得到pivot的rank。从而缩小范围继续找第k大的值。[练习题](https://www.lintcode.com/problem/461/note)
 
 ```python
@@ -192,6 +192,41 @@ def kthSmallest(self, k, nums):
         # 走到这，说明k不在左和右，只能是pivot的位置。
         return pivot
 ```
+
+##### 3个Pointers将array分成3端
+这个类型题目少一些。经典题是[Sort Colors](https://www.lintcode.com/problem/148/)：
+给定一个包含红，白，蓝且长度为 n 的数组，将数组元素进行分类使相同颜色的元素相邻，并按照红、白、蓝的顺序进行排序。我们使用整数 0，1 和 2 分别代表红，白，蓝
+
+这题的思路是弄3个Pointers：
+left之前的(不包括left)都是0，right之后的(不包括right)都是2。i遍历整个array,遇到0就放到左边，遇到1就放到右边，每次放的操作完成后，需要相应的更新left,和right的位置以更新左右2个派系的边界
+
+```python
+def sortColors(self, A):
+        left, index, right = 0, 0, len(A) - 1
+        
+        while index <= right:
+            if A[index] == 1:
+                index += 1
+            elif A[index] == 0:
+                if index >= left:
+                    A[index], A[left] = A[left], A[index]
+                index += 1
+                left += 1
+            elif A[index] == 2:
+                A[index], A[right] = A[right], A[index]
+                right -= 1
+
+```
+Follow-Up: [当有K个颜色时，怎么做？](https://www.lintcode.com/problem/143/)
+
+
+ ### 同向双指针
+ 同向双指针这块需要未来慢慢补充。目前看下下面这题。
+
+  上一节的交换人质模板适用的题里，如果题目提到要保留原有顺序，那交换人质就不能用了。就需要用同向双针来做。例题就是[Move Zeros](https://www.lintcode.com/problem/539/)
+
+
+
 
 
 
