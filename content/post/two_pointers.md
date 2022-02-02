@@ -1,7 +1,7 @@
 ---
-title: "Two_pointers"
+title: "Two Pointers复习"
 date: 2022-02-01T17:51:43+08:00
-draft: true
+draft: false
 tags: ["Algo","Tech","Lintcode","Two Pointers"]
 topics: ["TechBlog"]
 ---
@@ -39,7 +39,6 @@ TwoSum原题：给一组整数arr和目标值，是否存在任意一对数字�
 [Two Sum - Unique pairs](https://www.lintcode.com/problem/587)  
 ```python
 def twoSum6(self, nums, target):
-        # write your code here
         nums.sort()
         ans = 0
         i,j = 0 , len(nums)-1
@@ -98,6 +97,104 @@ def threeSum(self, numbers):
  
 
 ##### Partition 类
+Partition类题目都会用到下面这个人质交换模板：
+```python
+while i <= j:
+    # 注意是 i <=j, 不是 i < j
+     while i <= j and num[i]属于左侧帮派:
+        i += 1
+     while i <= j and num[j]属于右侧帮派:
+         j -= 1
+    if i <= j:
+        # 交换人质
+         num[i], num[j] =  num[j],  num[i]
+        i += 1
+        j -= 1
+```
+尤其注意上面的模板里是用的  <=。为什么是等于呢？因为如果i==j,那么最后一个元素依然需要鉴别是左右哪一边。
+
+* 上面的代码走完后，无论num长度是奇数个还是偶数个，i,j各自都在敌对帮派的第一个位置。
+* 人质划分后，是不保证原有的元素顺序的。只是保证同一帮派的在一边。（**not stable**）
+
+相关练习：
+* https://www.lintcode.com/problem/49/note
+* 
+
+###### Quicksort
+虽然也用到了上面的模板，但是不是非左即右，而是采用了pivot里外不是人的划分，下面是quicksort的代码：
+```python
+def sortIntegers(self, A):
+        # Write your code here
+        self.quickSort(A, 0, len(A) - 1)
+    
+    def quickSort(self, A, start, end):
+        if start >= end:
+            return
+        
+        left, right = start, end
+        pivot = A[(start + end) // 2]
+
+        # key point 2: every time you compare left & right, it should be left <= right not left < right
+        while left <= right:
+            while left <= right and A[left] < pivot:
+                # 注意啊！！是 < pivot 不是 <= pivot
+                left += 1
+            
+            while left <= right and A[right] > pivot:
+                right -= 1
+            
+            if left <= right:
+                A[left], A[right] = A[right], A[left]
+                left += 1
+                right -= 1
+
+        self.quickSort(A, start, right)  # right是左派的前线
+        self.quickSort(A, left, end)    # left 是右派的前线
+```
+**关于3种划分的解释**
+* 如果改成  A[left] <= pivot， A[right] > pivot 这种非左即右：        
+遇到[2,2,2,2] 会分成 [], [2,2,2,2], 跳不出递归。
+
+* 如果改成 A[left] <= pivot， A[right] >= pivot 这种双面间谍：
+遇到[2,2,2,2] 还是会分成 [], [2,2,2,2], 跳不出递归。
+
+* 最后采用的 A[left] < pivot， A[right] > pivot 这种里外不是人的：
+遇到等于pivot的元素，2个帮派都把他当对方的人，遇到就拿去交换。那么最后这些散落的，重复的pivot就会随机的在2个帮派之间分摊掉。避免形成 [], 从而避免跳不出递归。
+
+###### QuickSelect
+一个o(N)的find kth element的算法。用到了和quicksort一样的分区。思路就是通过快速排序算法的partition步骤，可以将小于pivot的值划分到pivot左边，大于pivot的值划分到pivot右边，所以可以直接得到pivot的rank。从而缩小范围继续找第k大的值。[练习题](https://www.lintcode.com/problem/461/note)
+
+```python
+def kthSmallest(self, k, nums):
+        n = len(nums)
+        return self.partition(nums, 0, n - 1, k - 1)
+        
+    def partition(self, nums, start, end, k):
+        left, right = start, end
+        pindex = (left + right) // 2
+        pivot = nums[pindex]
+        
+        while left <= right:
+            while left <= right and nums[left] < pivot:
+                left += 1
+            while left <= right and nums[right] > pivot:
+                right -= 1
+            if left <= right:
+                nums[left], nums[right] = nums[right], nums[left]
+                left += 1
+                right -= 1
+        
+        # 如果第 k 小在右侧，搜索右边的范围，否则搜索左侧。
+        if k <= right:
+            return self.partition(nums, start, right, k)
+        if k >= left:
+            return self.partition(nums, left, end, k)
+        # 走到这，说明k不在左和右，只能是pivot的位置。
+        return pivot
+```
+
+
+
 
 
 

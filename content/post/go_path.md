@@ -93,6 +93,10 @@ import的路径可以是相对路径，比如那些在gopath/src的包;可以是
 [一起弄明白go的依赖管理 Go Modues/ GOPATH](https://juejin.cn/post/6844904136056504327)  
 
 
+#### Package
+代码里的package名字不一定要和代码文件所在的目录名字相同。比如main package所在的目录名字不一定是"main"。但是go程序运行的时候会搜索main package下的main()。并且main package下不可以有多个main。你平时写一些Playground时要想有多个main入口。就建一个/cmd，下面建 cmd/folder1, cmd/folder2... 每个folder里的代码可以有一个main()
+
+
 
 ## Summary
 本文总结了GoPath和Go Modules的使用。Go Modules的出现可以代替GoPath。除非是遇到了一些legacy的项目。**有了Go Module将不需要在把项目放到$GOPATH/src下。** 建议直接学习modules的使用
