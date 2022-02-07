@@ -13,6 +13,6 @@ topics: ["TechBlog"]
 ### 高可用
 方法论上，高可用是通过冗余+自动故障转移来实现的。整个互联网分层系统架构的高可用，又是通过每一层的冗余+自动故障转移来综合实现的
 
-[什么是HA](https://zhuanlan.zhihu.com/p/43723276)
-[VIP技术](http://www.xumenger.com/virtual-ip-20190220/)
+* [什么是HA](https://zhuanlan.zhihu.com/p/43723276)
+* [VIP技术](http://www.xumenger.com/virtual-ip-20190220/)
 
