@@ -261,3 +261,29 @@ class LRUCache:
             self.map[key] = new_item
 
 ```
+
+## 链表的Debug
+为了更方便的debug，我写了一些链表debug的utils. 
+
+```python
+def debug(head):
+    # print the list
+    arr = []
+    strs = ""
+    while head:
+        arr.append(head.val)
+        print( str(head.val),"->", end=" ")
+        head = head.next
+    print('null')
+
+
+def build(arr):
+    # genereate linked-list from array
+    dummy = ListNode(-1)
+    h = dummy
+    for v in arr:
+        newnode = ListNode(v)
+        h.next = newnode
+        h = h.next
+    return dummy.next
+```
