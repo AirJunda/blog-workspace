@@ -28,12 +28,12 @@ pipenv的安装方式如下:
 pip3 install pipenv
 ```
 如果是windows中安装需要添加如下的环境变量，才能在安装完后直接从cmd运行。注意下面路径中的xxx表示当前用户名，Python38是假定本机使用的python是3.8。
-```
+```shell
 “C:\Users\XXX\AppData\Roaming\Python\Python38\Scripts”
 ```
 
 #### pipenv常用命令：
-```
+```shell
 pipenv --two  # 使用当前系统中的Python2 创建环境
 pipenv --three  # 使用当前系统中的Python3 创建环境
 pipenv --python 3  # 指定使用Python3创建环境
@@ -43,7 +43,7 @@ pipenv --rm # 删除当前目录下的虚拟环境
 ```
 
 激活虚拟环境
-```
+```shell
 cd project_folder
 pipenv shell
 ```
