@@ -28,7 +28,7 @@ celery -A tasks worker --loglevel=info -P solo
 改用Ubuntu的VM并不是一帆风顺的，遇到了好几个问题。最后都解决了。
 
 ### Python3的版本
-之前的vagrantfile一直用的Ubuntu 16的版本，但是16的版本呢，python3装的是3.5。我尝试网上的教程安装3.8，但是就死活说找不到 python3.8. 有人说是因为16的版本太旧了。装不了3.8和3.9。
+(**更新：建议直接用18不要用16了**)之前的vagrantfile一直用的Ubuntu 16的版本，但是16的版本呢，python3装的是3.5。我尝试网上的教程安装3.8，但是就死活说找不到 python3.8. 有人说是因为16的版本太旧了。装不了3.8和3.9。
 而3.5的话，import新的celery会报语法错误。于是最后折腾了半天只好卸载了python3.5,装了3.6。然而这个带来了另一问题，就是pip3也卸载了。而重新装pip3会主动安装python3.5-minimum. 最后的解决方案是单独装pip3.6, 之后py3的包都用pip3.6而不是pip3去管理，或者设置soft link让pip3指向pip3.6。 这个过程涉及了好几个步骤，记录如下：
 
 #### 安装python3.6
@@ -36,7 +36,7 @@ celery -A tasks worker --loglevel=info -P solo
 apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 apt-get -y install software-properties-common
 add-apt-repository ppa:deadsnakes/ppa
-apt get update
+apt-get update
 apt-get -y install python3.6
 apt remove python3.5-minimal -y #有人说不建议删除3.5，有些系统工具会用不了。我当时是删了。  
 ```
@@ -59,7 +59,7 @@ sudo ln -sf /usr/local/bin/pip3.6 /usr/bin/pip3 #留意pip3.6的位置可能不�
 [教程](https://iswbm.com/357.html)
 
 ####  项目文件夹同步
-我目前是把project folder放在vagrantfile所在的目录下。我尝试去把windows下的任意位置和VM中的路径做同步绑定。但是没成功。这个等以后成功了，再在这里补充。
+我目前是把project folder放在vagrantfile所在的目录下。我尝试去把windows下的任意位置和VM中的路径做同步绑定。但是遇到些奇怪的bug。这个未来会单独开一篇文章讲解。
 
 #### VM访问Host的服务
 我的redis是跑在Win上的。那么linux里运行的celery的broker地址就不能用localhost了。因此需要找出host的地址。但是我这里卡住了，我在VM里用Ifconfig找host的地址，但试了几个都对。我最后是通过在host启动了一个flask app, 并设置app.run(host="0.0.0.0")，允许所有host访问当前的flask。这样flask启动后console里会打印出host的地址。我当时显示的host地址是 http://192.168.1.42:5000/
