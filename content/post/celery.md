@@ -59,7 +59,7 @@ sudo ln -sf /usr/local/bin/pip3.6 /usr/bin/pip3 #留意pip3.6的位置可能不�
 [教程](https://iswbm.com/357.html)
 
 ####项目文件夹同步
-我目前是放在
+我目前是把project folder放在vagrantfile所在的目录下。我尝试去把windows下的任意位置和VM中的路径做同步绑定。但是没成功。这个等以后成功了，再在这里补充。
 
 ### VM访问Host的服务
 我的redis是跑在Win上的。那么linux里运行的celery的broker地址就不能用localhost了。因此需要找出host的地址。但是我这里卡住了，我在VM里用Ifconfig找host的地址，但试了几个都对。我最后是通过在host启动了一个flask app, 并设置app.run(host="0.0.0.0")，允许所有host访问当前的flask。这样flask启动后console里会打印出host的地址。我当时显示的host地址是 http://192.168.1.42:5000/
