@@ -32,12 +32,21 @@ prompt_dir() {
 prompt_segment green $CURRENT_FG '%~'
 }
 
+## VS Code乱码
+按上面步骤设置了iterm后，Vscode的 integrated terminal 中agnoster主题的符号会显示乱码。这我们就需要额外配置下vscode中 terminal font
+
+在VS Code的settings里搜索terminal font, 找到Integrated: Font Family
+Controls the font family of the terminal, this defaults to Editor: Font Family's value.
+然后输入 ```Meslo LG S for Powerline``` 这个亲测有用。stackoverflow上别人提到的font有的我试了不行。
+
 
 
 
 ## Extra Reading
 * [额外可选配置](https://segmentfault.com/a/1190000013612471)
 * [Customize Iterm 2 with ZSH and Powerlevel10k](https://www.youtube.com/watch?v=D2PSsnqgBiw)
+* [VS Code乱码解决](https://stackoverflow.com/questions/50051620/zsh-agnoster-theme-in-vs-code-integrated-terminal-not-displaying-symbols)
+* [解决 VScode 终端 Zsh 主题乱码的问题](https://dreamhomes.top/posts/202006222027/)
 
 
 
