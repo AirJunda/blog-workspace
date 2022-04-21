@@ -2,7 +2,7 @@
 title: "Mac上快速打开项目文件的设置"
 date: 2022-04-21T21:10:13+08:00
 draft: false
-tags: ["Terminal","Tech","Mac","Setup", "Vscode"，“Pycharm”]
+tags: ["Terminal","Tech","Mac","Setup", "Vscode",“Pycharm”]
 topics: ["TechBlog"]
 ---
 
@@ -58,3 +58,6 @@ done
 
 open -na "/Users/lij6/Library/Application Support/JetBrains/Toolbox/apps/PyCharm-P/ch-0/213.7172.26/PyCharm.app/Contents/MacOS/pycharm" $wait --args "${ideargs[@]}"
 ```
+
+## Reference
+https://apple.stackexchange.com/questions/238948/osx-how-to-add-a-right-click-option-to-a-folder-which-opens-the-folder-with-an
